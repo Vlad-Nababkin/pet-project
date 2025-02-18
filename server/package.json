@@ -10,13 +10,12 @@
     "undoSeed": "npx sequelize db:seed:all",
     "createDB": "npx sequelize db:create",
     "dropDB": "npx sequelize db:drop",
-    "db": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "db": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all && npm run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.20.0",
