@@ -5,11 +5,11 @@ export default function Home() {
 		<div>
 			<input
 				type='text'
-				class='search-input'
+				className='search-input'
 				placeholder='Введите запрос...'
 				aria-label='Поиск по сайту'
 			/>
-			<button type='button' class='search-button'>
+			<button type='button' className='search-button'>
 				Найти
 			</button>
 		</div>
