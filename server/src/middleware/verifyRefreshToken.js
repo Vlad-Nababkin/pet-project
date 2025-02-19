@@ -8,9 +8,9 @@ function verifyRefreshToken(req, res, next) {
     const { user } = jwt.verify(refreshToken, process.env.SECRET_REFRESH_TOKEN);
     res.locals.user = user;
     next();
-  } catch (error) {
-    console.log("======= Invalid refresh token =======", error.message);
-    res.status(401).clearCookie("refreshToken").json(formatResponse(401, "Invalid refresh token", null, error.message));
+  } catch ({message}) {
+    console.log("======= Invalid refresh token =======", message);
+    res.status(401).clearCookie("refreshToken").json(formatResponse(401, "Invalid refresh token", null, message));
   }
 }
 
