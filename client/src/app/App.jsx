@@ -7,6 +7,7 @@ import RegPage from '../pages/RegPage/RegPage'
 import UserApi from '../entities/User/UserApi'
 import { setAccessToken } from '../shared/lib/axiosinstance'
 import LoginPage from '../pages/LoginPage/LoginPage'
+import QwestPage from '../pages/QwestPage/QwestPage'
 
 function App() {
 	const [user, setUser] = useState(null)
@@ -14,7 +15,7 @@ function App() {
 	useEffect(() => {
 		UserApi.refreshToken().then(console.log)
 		UserApi.refreshToken()
-			.then(({ error, data, statusCode}) => {
+			.then(({ error, data, statusCode }) => {
 				if (error) {
 					setUser(null)
 					return
@@ -31,10 +32,13 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Layout user={user} setUser={setUser} />} />
-				<Route path='/' element={<Home />} />
-				<Route path='/reg' element={<RegPage setUser={setUser} />} />
-				<Route path='/login' element={<LoginPage setUser={setUser} />} />
+				<Route path='/' element={<Layout user={user} setUser={setUser} />}>
+					<Route path='/' element={<Home />} />
+					<Route path='/quests' element={<QwestPage />} />
+					<Route path='/reg' element={<RegPage setUser={setUser} />} />
+					<Route path='/login' element={<LoginPage setUser={setUser} />} />
+				</Route>
+				{/* <Route path='/qwests' element={<QwestPage />} /> */}
 			</Routes>
 		</BrowserRouter>
 	)

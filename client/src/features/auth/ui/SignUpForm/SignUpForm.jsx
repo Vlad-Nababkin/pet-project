@@ -44,8 +44,11 @@ export default function SignUpForm({ setUser }) {
 				navigate('/')
 			}
 		} catch (error) {
-			console.log('=========error======>>>>>>>>>>>>')
-			alert(error)
+  console.error(
+		'Ошибка при регистрации:',
+		error.response?.data || error.message
+	)
+	alert(error.response?.data?.message || 'Произошла ошибка при регистрации.')
 		}
 	}
   const {userName, email, password, repeatPassword} = inputs

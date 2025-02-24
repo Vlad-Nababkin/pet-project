@@ -8,7 +8,6 @@ export default function Layout({ user, setUser }) {
 		<div>
 			<Nav user={user} setUser={setUser}/>
 			<Outlet />
-			<HomePage />
 		</div>
 	)
 }

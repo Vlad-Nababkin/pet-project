@@ -69,6 +69,12 @@ export default function Nav({ user, setUser }) {
 					>
 						Quests
 					</NavLink>
+					<NavLink
+						to='/createQwest'
+						className={({ isActive }) => (isActive ? styles.active : '')}
+					>
+						Add new quests
+					</NavLink>
 					<button type='button' onClick={signOutHandler}>
 						Выход
 					</button>

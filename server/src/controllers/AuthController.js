@@ -42,8 +42,10 @@ class AuthController {
 		const normalizedEmail = email.toLowerCase()
 		try {
 			const userFound = await UserService.getByEmail(normalizedEmail)
+			console.log(userFound, "1111111111")
+			
 
-			if (!userFound) {
+			if (userFound) {
 				return res
 					.status(400)
 					.json(
